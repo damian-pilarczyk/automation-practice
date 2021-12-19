@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "types": ["node", "cypress"],
+        "typeRoots": [
+            "./support",
+            "./integration"
+        ]
+    },
+    "include": [
+        "**/*.ts",
+    ]
+}

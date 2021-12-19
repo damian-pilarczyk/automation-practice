@@ -1,0 +1,8 @@
+{
+    "env": {
+        "base_url": "http://automationpractice.com/",
+        "login_endpoint": "index.php?controller=authentication",
+        "user_email": "",
+        "user_password": ""
+    }
+}
