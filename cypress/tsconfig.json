@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "moduleResolution": "Node",
         "target": "es6",
         "types": ["node", "cypress"],
         "typeRoots": [

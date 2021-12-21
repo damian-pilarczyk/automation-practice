@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^9.1.1"
+    "cypress": "^9.1.1",
+    "ts-mixer": "^6.0.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.7.0",

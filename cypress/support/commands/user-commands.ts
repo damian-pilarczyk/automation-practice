@@ -1,5 +1,12 @@
 import * as Env from './../consts/cypress-env-vars-names';
 import { getRandomAddress, getRandomEmail, getRandomName, getRandomNumber, getRandomPassword } from '../helpers/random-helper';
+import { emailInput, passwordInput, submitButton } from '../selectors/auth';
+
+Cypress.Commands.add('signIn', () => {
+    cy.get(emailInput).type(Cypress.env(Env.userEmail));    
+    cy.get(passwordInput).type(Cypress.env(Env.userPassword));
+    return cy.get(submitButton).click();
+});
 
 Cypress.Commands.add('loginViaApi',  () => 
     cy.request({
@@ -50,5 +57,7 @@ Cypress.Commands.add('registerViaApi',  () => {
     }).then(() => {
         Cypress.env(Env.userEmail, body.email);
         Cypress.env(Env.userPassword, body.address1);
+        Cypress.env(Env.userFirstName, body.firstname);
+        Cypress.env(Env.userLastName, body.lastname);
     });
 });
