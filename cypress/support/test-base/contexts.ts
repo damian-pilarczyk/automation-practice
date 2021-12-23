@@ -18,11 +18,11 @@ function desktopContextBase(
 export const desktopContext = (
     testSection: TestSection, 
     callback: (homePage: Home) => void): void => {
-    desktopContextBase(testSection, callback, () => cy.visit(Cypress.env(baseUrl)));
+    desktopContextBase(testSection, callback, () => cy.viewport('macbook-16').visit(Cypress.env(baseUrl)));
 };
 
 export const desktopLoginContext = (
     testSection: TestSection, 
     callback: (homePage: Home) => void): void => {
-    desktopContextBase(testSection, callback, () => cy.loginViaApi().visit(Cypress.env(baseUrl)));
+    desktopContextBase(testSection, callback, () => cy.loginViaApi().viewport('macbook-16').visit(Cypress.env(baseUrl)));
 };

@@ -1,6 +1,6 @@
 import * as Env from './../consts/cypress-env-vars-names';
 import { getRandomAddress, getRandomEmail, getRandomName, getRandomNumber, getRandomPassword } from '../helpers/random-helper';
-import { emailInput, passwordInput, submitButton } from '../selectors/auth';
+import { emailInput, passwordInput, submitButton } from '../page/selectors/auth';
 
 Cypress.Commands.add('signIn', () => {
     cy.get(emailInput).type(Cypress.env(Env.userEmail));    

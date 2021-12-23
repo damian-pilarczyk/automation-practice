@@ -1,5 +1,6 @@
 export enum TestSection {
     account,
-    cart,
+    contact,
     offer,
+    order,
 }
