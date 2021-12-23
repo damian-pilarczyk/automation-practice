@@ -20,9 +20,6 @@ Cypress.Commands.add('loginViaApi',  () =>
         headers: {
             'content-type': 'application/x-www-form-urlencoded',
         },
-    }).then(res => {
-        const [cookieName, cookieValue] = res.requestHeaders.cookie.split('=');
-        cy.setCookie(cookieName, cookieValue);
     })
 );
 
