@@ -7,13 +7,9 @@ import { Shipping } from '../support/page/content-pages/product-check-out/shippi
 import { ShoppingCartSummary } from '../support/page/content-pages/product-check-out/shopping-cart-summary';
 import { CartModal } from '../support/page/modals/cart-modal';
 import { LoggedIn } from '../support/page/top-bars/logged-in';
-import { desktopContext } from '../support/test-base/contexts';
-import { spec } from '../support/test-base/spec';
-import { TestCategory } from '../support/test-base/test-categories';
-import { TestSection } from '../support/test-base/test-sections';
 
-desktopContext(TestSection.order, (page) => {
-    spec(TestCategory.regression, 'Check-out', () => {
+desktopContext(section.order, (page) => {
+    spec(testCategory.regression, 'Check-out', () => {
         page
             .hoverFirstItem()
             .addToCart()

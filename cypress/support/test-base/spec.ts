@@ -20,4 +20,4 @@ spec.only = (cat: TestCategory, title: string, fn: Func): void => {
     it.only(title, fn);
 };
 
-export { spec };
+export { spec, SpecFuntion };
