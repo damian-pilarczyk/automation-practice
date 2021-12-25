@@ -8,7 +8,7 @@ import { ShoppingCartSummary } from '../support/page/content-pages/product-check
 import { CartModal } from '../support/page/modals/cart-modal';
 import { LoggedIn } from '../support/page/top-bars/logged-in';
 
-desktopContext(section.order, (page) => {
+desktopContext(section.order, page => {
     spec(testCategory.regression, 'Check-out', () => {
         page
             .hoverFirstItem()

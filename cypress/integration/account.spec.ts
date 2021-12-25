@@ -2,7 +2,7 @@ import { Authentication } from '../support/page/content-pages/authentication';
 import { LoggedIn } from '../support/page/top-bars/logged-in';
 import { LoggedOut } from '../support/page/top-bars/logged-out';
 
-desktopContext(section.account, (page) => {
+desktopContext(section.account, page => {
     spec(testCategory.smoke, 'Sign in', () => {
         page
             .onTopBar(LoggedOut)
@@ -14,7 +14,7 @@ desktopContext(section.account, (page) => {
     });  
 });
 
-desktopLoginContext(section.account, (page) => {
+desktopLoginContext(section.account, page => {
     spec(testCategory.smoke, 'Sign out', () => {
         page
             .onTopBar(LoggedIn)

@@ -15,10 +15,8 @@ export const getRandomNumber = (from: number, to: number): number => Math.floor(
 
 export const getRandomEmail = (): string => {
     const part1 = getRandomString(`${letters}${digits}`, getRandomNumber(1, 20));
-    const part2 = getRandomString(`${letters}${digits}`, getRandomNumber(1, 5));
-    const part3 = getRandomString(letters, 2);
 
-    return `${part1}@${part2}.${part3}`;
+    return `${part1}@autotest.com`;
 };
 
 export const getRandomName = (): string => {
