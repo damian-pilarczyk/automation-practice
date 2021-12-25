@@ -14,6 +14,7 @@ jobs:
       SECTIONS: all
     steps:
       - name: run tests
+        shell: bash
         run: |
           chmod +x ${GITHUB_WORKSPACE}/bin/run-tests.sh
           ${GITHUB_WORKSPACE}/bin/run-tests.sh chrome $TEST_TYPE $SECTIONS
