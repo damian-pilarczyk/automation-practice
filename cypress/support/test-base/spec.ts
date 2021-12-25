@@ -1,5 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/naming-convention
 import { Func } from 'mocha';
+import { activeTestCategories } from '../consts/cypress-env-vars-names';
 import { TestCategory } from './test-categories';
 
 interface SpecFuntion {
@@ -8,16 +8,28 @@ interface SpecFuntion {
     only(cat: TestCategory, title: string, fn: Func): void; 
 }
 
+const specBase = (cat: TestCategory, title: string, fn: Func, testFunc: any): void => {
+    const envCategory = TestCategory[String(Cypress.env(activeTestCategories)).toLowerCase() as keyof typeof TestCategory];
+    if (envCategory) {
+        if (cat <= envCategory) {
+            testFunc(title, fn);
+        }        
+    } else {
+        testFunc(title, fn);
+    }
+    
+};
+
 const spec = ((cat: TestCategory, title: string, fn: Func): void => {
-    it(title, fn);
+    specBase(cat, title, fn, it);
 }) as SpecFuntion;
 
 spec.skip = (cat: TestCategory, title: string, fn: Func): void => {
-    it.skip(title, fn);
+    specBase(cat, title, fn, it.skip);
 };
 
 spec.only = (cat: TestCategory, title: string, fn: Func): void => {
-    it.only(title, fn);
+    specBase(cat, title, fn, it.only);
 };
 
 export { spec, SpecFuntion };

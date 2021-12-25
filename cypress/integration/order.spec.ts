@@ -1,4 +1,4 @@
-import { Authentication } from '../support/page/content-pages/authentication';
+import { Authentication } from '../support/page/content-pages/my-account/authentication';
 import { MyAccount } from '../support/page/content-pages/my-account/my-account';
 import { Orders } from '../support/page/content-pages/my-account/orders';
 import { Address } from '../support/page/content-pages/product-check-out/address';

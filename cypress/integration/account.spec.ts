@@ -1,4 +1,4 @@
-import { Authentication } from '../support/page/content-pages/authentication';
+import { Authentication } from '../support/page/content-pages/my-account/authentication';
 import { LoggedIn } from '../support/page/top-bars/logged-in';
 import { LoggedOut } from '../support/page/top-bars/logged-out';
 

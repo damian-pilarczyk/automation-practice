@@ -1,8 +1,8 @@
-import { baseUrl } from '../../consts/cypress-env-vars-names';
-import { ContentComponent } from '../interfaces/content-component.interface';
-import { PageBase } from '../base/page-base';
-import * as HomeCss from '../selectors/home';
-import { Store } from '../../utils/store';
+import { baseUrl } from '../../../consts/cypress-env-vars-names';
+import { ContentComponent } from '../../interfaces/content-component.interface';
+import { PageBase } from '../../base/page-base';
+import * as HomeCss from '../../selectors/home';
+import { Store } from '../../../utils/store';
 
 export class Home extends PageBase implements ContentComponent { 
     url = `${Cypress.env(baseUrl)}index.php`;

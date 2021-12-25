@@ -1,8 +1,8 @@
-import { ContactUs } from '../support/page/content-pages/contact-us';
+import { ContactUs } from '../support/page/content-pages/contact-us/contact-us';
 import { LoggedOut } from '../support/page/top-bars/logged-out';
 
 desktopContext(section.contact, page => {
-    spec(testCategory.night, 'Sign in', () => {
+    spec(testCategory.night, 'Contact us', () => {
         page
             .onTopBar(LoggedOut)
             .contactUs()
