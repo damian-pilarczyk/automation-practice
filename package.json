@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint cypress/** --ext .ts"
+    "lint": "eslint cypress/** --ext .ts",
+    "run-tests": "bin/run-mweb-tests.sh"
   },
   "keywords": [],
   "author": "",

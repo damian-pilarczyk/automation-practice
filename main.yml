@@ -1,0 +1,19 @@
+name: Cypress tests
+
+on: 
+  schedule: 
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs: 
+  cypress-run:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node16.5.0-chrome94-ff93
+    env:
+      TEST_TYPE: night
+      SECTIONS: all
+    steps:
+      - name: run tests
+        run: 
+          - chmod +x bin/run-tests.sh
+          - bin/run-tests.sh chrome $TEST_TYPE $SECTIONS
