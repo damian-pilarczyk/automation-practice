@@ -14,6 +14,6 @@ jobs:
       SECTIONS: all
     steps:
       - name: run tests
-        run: 
-          - chmod +x bin/run-tests.sh
-          - bin/run-tests.sh chrome $TEST_TYPE $SECTIONS
+        run: |
+          chmod +x bin/run-tests.sh
+          bin/run-tests.sh chrome $TEST_TYPE $SECTIONS
