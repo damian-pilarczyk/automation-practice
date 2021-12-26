@@ -5,7 +5,8 @@
         "types": ["node", "cypress"],
         "typeRoots": [
             "./support",
-            "./integration"
+            "./integration",
+            "./plugins",
         ]
     },
     "include": [

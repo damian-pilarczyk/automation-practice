@@ -3,11 +3,7 @@ import { PersonalInfo } from '../support/page/content-pages/my-account/personal-
 import { LoggedIn } from '../support/page/top-bars/logged-in';
 
 desktopContext(section.account, page => {
-    before(() => {
-        cy.registerViaApi();
-    });
-
-    spec(testCategory.regression, 'Regression endpoint', () => {
+    spec(testCategory.regression, 'Registration endpoint', () => {
         page
             .onTopBar(LoggedIn)
             .verifyUserIsLoggedIn()

@@ -5,14 +5,17 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint cypress/** --ext .ts",
-    "run-tests": "bin/run-mweb-tests.sh"
+    "run-tests": "bin/run-mweb-tests.sh",
+    "create-user": "npx ts-node cypress/support/actions/create-user.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cypress": "^9.1.1",
-    "ts-mixer": "^6.0.0"
+    "node-fetch": "^2.6.6",
+    "ts-mixer": "^6.0.0",
+    "ts-node": "^10.4.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.7.0",

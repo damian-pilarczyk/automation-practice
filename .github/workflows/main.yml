@@ -5,6 +5,10 @@ on:
     - cron: '0 1 * * *'
   workflow_dispatch: 
     inputs:
+      browser:
+        description: 'Browser (chrome | firefox | elektron)'
+        required: true
+        default: 'chrome'
       test_category:
         description: 'Test category (smoke | regression | night | other)'
         required: true
@@ -24,4 +28,4 @@ jobs:
         shell: bash
         run: |
           chmod +x ${GITHUB_WORKSPACE}/bin/run-tests.sh
-          ${GITHUB_WORKSPACE}/bin/run-tests.sh chrome ${{ github.event.inputs.test_category }} ${{ github.event.inputs.sections }}
+          ${GITHUB_WORKSPACE}/bin/run-tests.sh ${{ github.event.inputs.browser }} ${{ github.event.inputs.test_category }} ${{ github.event.inputs.sections }}

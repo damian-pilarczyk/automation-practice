@@ -1,4 +1,10 @@
 {
+    "retries": {
+        "runMode": 1,
+        "openMode": 1
+    },
+    "screenshotOnRunFailure": false,
+    "videoUploadOnPasses": false,
     "env": {
         "base_url": "http://automationpractice.com/",
         "auth_endpoint": "index.php?controller=authentication",

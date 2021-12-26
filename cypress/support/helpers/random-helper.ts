@@ -1,6 +1,5 @@
 const digits = '0123456789';
 const letters = 'abcdefghijklmnopqrstuvwxyz';
-const specialSigns = ' !@#$%^&*()_+-=[]{};\'"\\|,.<>/?';
 
 function getRandomString(characters: string, length: number): string {
     let res = '';
@@ -27,7 +26,7 @@ export const getRandomName = (): string => {
 };
 
 export const getRandomPassword = (): string => {
-    const characters = `${letters.toUpperCase()}${letters}${digits}${specialSigns}`;
+    const characters = `${letters.toUpperCase()}${letters}${digits}`;
 
     return getRandomString(characters, getRandomNumber(5, 30));
 };
