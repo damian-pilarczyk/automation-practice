@@ -14,14 +14,15 @@ function desktopContextBase(
 
     const isToTest = mwebSectionsToTest.includes(section);
 
-    if (isToTest || mwebSectionsToTestEnv === 'all' || !mwebSectionsToTestEnv) {context(TestSection[section], () => {
-        if (beforeEachFunc) {
-            beforeEach(() => {
-                beforeEachFunc();
-            });
-        }
-        callback(new Home());
-    });
+    if (isToTest || mwebSectionsToTestEnv === 'all' || !mwebSectionsToTestEnv) {
+        context(TestSection[section], () => {
+            if (beforeEachFunc) {
+                beforeEach(() => {
+                    beforeEachFunc();
+                });
+            }
+            callback(new Home());
+        });
     }    
 }
 

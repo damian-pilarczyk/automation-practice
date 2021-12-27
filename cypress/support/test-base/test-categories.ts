@@ -1,6 +1,6 @@
 export enum TestCategory {
-    smoke,
-    regression,
-    night,
-    other,
+    smoke = 1,
+    regression = 2,
+    night = 3,
+    other = 5,
 }
