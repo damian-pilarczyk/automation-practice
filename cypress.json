@@ -5,6 +5,7 @@
     },
     "screenshotOnRunFailure": false,
     "videoUploadOnPasses": false,
+    "fixturesFolder": false,
     "env": {
         "base_url": "http://automationpractice.com/",
         "auth_endpoint": "index.php?controller=authentication",
@@ -12,5 +13,6 @@
         "user_password": "",        
         "user_first_name": "",
         "user_last_name": ""
-    }
+    },
+    "projectId": "43wi8w"
 }
