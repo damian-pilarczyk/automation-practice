@@ -20,15 +20,18 @@ function sendRegistrationRequest(url: string, body: RegistrationRequestBody): vo
     });
 }
 
-module.exports = (on, config) => {     
-    const body = getRandomUserBody();
+module.exports = (on, config) => {
+    config.env[Env.activeSections] = process.env[Env.activeSections];
+    config.env[Env.activeTestCategories] = process.env[Env.activeTestCategories];
 
-    sendRegistrationRequest(`${config.env[Env.baseUrl]}${config.env[Env.authEndpoint]}`, body);
-
-    config.env[Env.userEmail] = body.email;
-    config.env[Env.userPassword] = body.passwd;
-    config.env[Env.userFirstName] = body.firstname;
-    config.env[Env.userLastName] = body.lastname;
+    if (!config.env[Env.userEmail]) {
+        const body = getRandomUserBody();
+        sendRegistrationRequest(`${config.env[Env.baseUrl]}${config.env[Env.authEndpoint]}`, body);
+        config.env[Env.userEmail] = body.email;
+        config.env[Env.userPassword] = body.passwd;
+        config.env[Env.userFirstName] = body.firstname;
+        config.env[Env.userLastName] = body.lastname;
+    }
 
     return config;
 };

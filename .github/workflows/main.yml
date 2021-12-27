@@ -27,5 +27,6 @@ jobs:
       - name: run tests
         shell: bash
         run: |
+          npm i
           chmod +x ${GITHUB_WORKSPACE}/bin/run-tests.sh
           ${GITHUB_WORKSPACE}/bin/run-tests.sh ${{ github.event.inputs.browser }} ${{ github.event.inputs.test_category }} ${{ github.event.inputs.sections }}
