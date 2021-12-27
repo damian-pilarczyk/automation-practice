@@ -1,4 +1,6 @@
 import { Authentication } from '../support/page/content-pages/my-account/authentication';
+import { MyAccount } from '../support/page/content-pages/my-account/my-account';
+import { PersonalInfo } from '../support/page/content-pages/my-account/personal-info';
 import { LoggedIn } from '../support/page/top-bars/logged-in';
 import { LoggedOut } from '../support/page/top-bars/logged-out';
 
@@ -21,5 +23,15 @@ desktopLoginContext(section.account, page => {
             .logOut()
             .onTopBar(LoggedOut)
             .verifyUserIsLoggedOut();
-    });  
+    }); 
+    
+    spec(testCategory.regression, 'Users personal info', () => {
+        page
+            .onTopBar(LoggedIn)
+            .goToMyAccount()
+            .onComponent(MyAccount)
+            .goToPersonalInfo()
+            .onComponent(PersonalInfo)
+            .verifyPersonalInfo();            
+    }); 
 });
