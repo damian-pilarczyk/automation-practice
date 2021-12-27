@@ -9,12 +9,11 @@ export class Orders extends PageBase implements ContentComponent {
 
     verifyLastOrder(): this {
         cy.get(MyAccountCss.ordersFirstRow).then($firstRow => {
+            const expectedPaymentMethod = Store.lastOrder.paymentMethod === 'check' ? 'Payment by check' : Store.lastOrder.paymentMethod;
             expect($firstRow.find(MyAccountCss.orderReference).text().trim()).to.be.eq(Store.lastOrder.reference);
             expect($firstRow.find(MyAccountCss.orderDate).text().trim()).to.be.eq(Store.lastOrder.date);
             expect($firstRow.find(MyAccountCss.orderTotalPrice).text().trim()).to.be.eq(Store.lastOrder.totalPrice);
-            expect($firstRow.find(MyAccountCss.orderPaymentMethod).text().trim()).to.be.eq(
-                Store.lastOrder.paymentMethod === 'check' ? 'Payment by check' : Store.lastOrder.paymentMethod
-            );
+            expect($firstRow.find(MyAccountCss.orderPaymentMethod).text().trim()).to.be.eq(expectedPaymentMethod);
         });
 
         return this;

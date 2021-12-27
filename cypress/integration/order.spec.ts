@@ -14,7 +14,6 @@ desktopContext(section.order, page => {
             .hoverFirstItem()
             .addToCart()
             .onModal(CartModal)
-            .verifyAddedProduct()
             .proceedToCheckout()
             .onComponent(ShoppingCartSummary)
             .proceedToCheckout()

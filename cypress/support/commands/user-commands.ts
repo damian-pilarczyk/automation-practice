@@ -19,5 +19,5 @@ Cypress.Commands.add('loginViaApi',  () =>
         headers: {
             'content-type': 'application/x-www-form-urlencoded',
         },
-    })
+    }),
 );
