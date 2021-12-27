@@ -17,9 +17,21 @@ on:
         description: 'Sections to test (separated by comma) e.g. "account,order"'
         required: true
         default: 'all'
+  push:
 
 jobs: 
+  lint: 
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: run tests
+        shell: bash
+        run: |
+          npm i
+          npm run lint
   cypress-run:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     container: cypress/browsers:node16.5.0-chrome94-ff93
     steps:
