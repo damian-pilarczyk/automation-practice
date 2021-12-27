@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # $1 browser
-# $2 $TEST_TYPE
-# $3 $MWEB_SECTIONS_TO_TEST
+# $2 $active_test_categories
+# $3 $active_sections
 
 export active_test_categories=$2
 export active_sections=$3
